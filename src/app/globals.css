@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,41 +46,61 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  /* Colores de marca Alfabética */
+  --color-alf-crema: var(--alf-crema);
+  --color-alf-turquoise: var(--alf-turquoise);
+  --color-alf-near-white: var(--alf-near-white);
+  --color-alf-tan-sun: var(--alf-tan-sun);
+  --color-alf-tangerine: var(--alf-tangerine);
+  --color-alf-bubblegum: var(--alf-bubblegum);
+  --color-alf-eerie-black: var(--alf-eerie-black);
+  --color-alf-grape: var(--alf-grape);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* --- Paleta de marca Alfabética --- */
+  --alf-crema: oklch(0.974 0.018 85);
+  --alf-turquoise: oklch(0.606 0.105 207);
+  --alf-near-white: oklch(0.989 0 0);
+  --alf-tan-sun: oklch(0.823 0.135 80);
+  --alf-tangerine: oklch(0.676 0.214 35);
+  --alf-bubblegum: oklch(0.835 0.122 330);
+  --alf-eerie-black: oklch(0.205 0 0);
+  --alf-grape: oklch(0.621 0.193 277);
+
+  /* --- Roles semánticos shadcn mapeados a la marca --- */
+  --background: var(--alf-near-white);
+  --foreground: var(--alf-eerie-black);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: var(--alf-eerie-black);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --popover-foreground: var(--alf-eerie-black);
+  --primary: var(--alf-turquoise);
+  --primary-foreground: var(--alf-near-white);
+  --secondary: var(--alf-tan-sun);
+  --secondary-foreground: var(--alf-eerie-black);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: var(--alf-tangerine);
+  --accent-foreground: var(--alf-near-white);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --ring: var(--alf-turquoise);
+  --chart-1: var(--alf-turquoise);
+  --chart-2: var(--alf-tangerine);
+  --chart-3: var(--alf-tan-sun);
+  --chart-4: var(--alf-grape);
+  --chart-5: var(--alf-bubblegum);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar: var(--alf-near-white);
+  --sidebar-foreground: var(--alf-eerie-black);
+  --sidebar-primary: var(--alf-turquoise);
+  --sidebar-primary-foreground: var(--alf-near-white);
+  --sidebar-accent: var(--alf-tangerine);
+  --sidebar-accent-foreground: var(--alf-near-white);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: var(--alf-turquoise);
 }
 
 .dark {
@@ -121,9 +141,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }

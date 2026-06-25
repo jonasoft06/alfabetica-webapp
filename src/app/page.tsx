@@ -1,9 +1,11 @@
-import { Button } from "@/components/ui/button";
+import Hero from "@/components/home/hero/hero";
 
 export default function Home() {
   return (
-    <main>
-
-    </main>
+    <>
+      <Hero />
+      {/* Espaciador temporal para probar el parallax */}
+      <div className="h-screen" />
+    </>
   );
 }
