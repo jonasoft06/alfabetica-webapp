@@ -14,7 +14,7 @@ const navItems = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-alf-crema">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 xl:py-6">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 xl:py-6">
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image

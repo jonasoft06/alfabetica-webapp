@@ -151,6 +151,20 @@
   }
 }
 
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 40s linear infinite;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -162,5 +176,5 @@
 }
 
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 120s linear infinite;
 }
