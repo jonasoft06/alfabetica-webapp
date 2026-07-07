@@ -7,6 +7,7 @@ import HowWeWork from "@/components/home/how-we-work/how-we-work";
 import SizesMarquee from "@/components/marquee/sizes-marquee";
 import ClientsTypes from "@/components/home/clients-types/clients-types";
 import Whitepaper from "@/components/home/clients-types/whitepaper";
+import FaqMarquee from "@/components/marquee/faq-marquee";
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <SizesMarquee />
       <ClientsTypes />
       <Whitepaper />
+      <FaqMarquee />
     </>
   );
 }

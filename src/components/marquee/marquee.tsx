@@ -3,33 +3,33 @@ import Image from "next/image";
 
 type MarqueeItem = {
   text: string;
-  icon: string;
+  icon?: string; // ahora opcional
 };
 
 type MarqueeProps = {
   items: MarqueeItem[];
   bgClass: string;
   textClass: string;
-  iconPosition?: "before" | "after"; // dónde va el ícono respecto al texto
+  iconPosition?: "before" | "after";
 };
 
 export default function Marquee({
   items,
   bgClass,
   textClass,
-  iconPosition = "after", // por defecto, después (como la banda de soluciones)
+  iconPosition = "after",
 }: MarqueeProps) {
-  const repeated = Array.from({ length: 6 }, () => items).flat();
+  const repeated = Array.from({ length: 12 }, () => items).flat();
 
   const renderItem = (item: MarqueeItem, key: string) => (
     <div key={key} className="flex shrink-0 items-center gap-6 pr-6">
-      {iconPosition === "before" && (
+      {item.icon && iconPosition === "before" && (
         <Image src={item.icon} alt="" width={24} height={24} />
       )}
       <span className={`whitespace-nowrap text-xl font-medium ${textClass}`}>
         {item.text}
       </span>
-      {iconPosition === "after" && (
+      {item.icon && iconPosition === "after" && (
         <Image src={item.icon} alt="" width={24} height={24} />
       )}
     </div>
