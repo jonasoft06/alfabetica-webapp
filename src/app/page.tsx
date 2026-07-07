@@ -5,6 +5,8 @@ import Evidence from "@/components/home/evidence/evidence";
 import PublishMarquee from "@/components/marquee/publish-marquee";
 import HowWeWork from "@/components/home/how-we-work/how-we-work";
 import SizesMarquee from "@/components/marquee/sizes-marquee";
+import ClientsTypes from "@/components/home/clients-types/clients-types";
+import Whitepaper from "@/components/home/clients-types/whitepaper";
 
 
 export default function Home() {
@@ -17,6 +19,8 @@ export default function Home() {
       <PublishMarquee />
       <HowWeWork />
       <SizesMarquee />
+      <ClientsTypes />
+      <Whitepaper />
     </>
   );
 }
