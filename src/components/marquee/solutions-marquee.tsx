@@ -1,5 +1,5 @@
 // src/components/home/banda-soluciones.tsx
-import Marquee from "./marquee";
+import Marquee from "./text-marquee";
 
 export default function SolutionsMarquee() {
   const items = [

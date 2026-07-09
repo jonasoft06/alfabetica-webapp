@@ -1,5 +1,5 @@
 // src/components/home/sizes-marquee.tsx
-import Marquee from "./marquee";
+import Marquee from "./text-marquee";
 
 export default function SizesMarquee() {
   const items = [

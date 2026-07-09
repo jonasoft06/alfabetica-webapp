@@ -23,7 +23,7 @@ export default function Hero() {
 
       {/* Fotos laterales — solo escritorio */}
       <Image
-        src="/images/home/hero/photo_book.png"
+        src="/images/home/hero/photo-book.png"
         alt="Persona leyendo un libro"
         width={260}
         height={340}
@@ -31,7 +31,7 @@ export default function Hero() {
         priority
       />
       <Image
-        src="/images/home/hero/photo_tablet.png"
+        src="/images/home/hero/photo-tablet.png"
         alt="Persona leyendo en tablet"
         width={260}
         height={340}
@@ -48,7 +48,7 @@ export default function Hero() {
         </h1>
 
         <Image
-          src="/svg/home/hero/underline_head.svg"
+          src="/svg/brand/underline-head.svg"
           alt=""
           width={380}
           height={20}
@@ -56,7 +56,7 @@ export default function Hero() {
         />
 
         <Image
-          src="/svg/home/hero/character-illustration.svg"
+          src="/svg/brand/character-illustration.svg"
           alt="Ilustración de persona bajo un techo"
           width={220}
           height={160}

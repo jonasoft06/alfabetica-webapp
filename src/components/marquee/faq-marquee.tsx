@@ -1,5 +1,5 @@
 // src/components/home/faq-marquee.tsx
-import Marquee from "./marquee";
+import Marquee from "./text-marquee";
 
 export default function FaqMarquee() {
   const items = [

@@ -8,7 +8,9 @@ import SizesMarquee from "@/components/marquee/sizes-marquee";
 import ClientsTypes from "@/components/home/clients-types/clients-types";
 import Whitepaper from "@/components/home/clients-types/whitepaper";
 import FaqMarquee from "@/components/marquee/faq-marquee";
-
+import { FaqSection } from "@/components/home/faq/faq-section";
+import { ScheduleCallSection } from "@/components/home/schedule-call/schedule-call-section";
+import { ClientsSection } from "@/components/home/clients/clients-section";
 
 export default function Home() {
   return (
@@ -23,6 +25,9 @@ export default function Home() {
       <ClientsTypes />
       <Whitepaper />
       <FaqMarquee />
+      <FaqSection />
+      <ScheduleCallSection />
+      <ClientsSection />
     </>
   );
 }

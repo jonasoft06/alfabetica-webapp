@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/home/hero/navbar";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

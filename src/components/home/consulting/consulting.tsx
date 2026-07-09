@@ -1,6 +1,5 @@
 // src/components/home/consultoria.tsx
-import Image from "next/image";
-import Link from "next/link";
+import { StarButton } from "@/components/common/star-button";
 
 export default function Consulting() {
   return (
@@ -28,36 +27,18 @@ export default function Consulting() {
           </p>
         </div>
 
-        {/* Columna 3: Botón estrellado */}
         <div className="flex justify-center lg:justify-end">
-          <Link
+          <StarButton
             href="/cotizador"
-            className="group relative flex items-center justify-center transition-transform hover:scale-105"
+            shapeSrc="/svg/home/consulting/button-project-quote.svg"
+            arrowSrc="/svg/home/consulting/arrow-project-quote.svg"
+            shapeClassName="w-60 animate-slow-spin xl:w-72"
+            labelClassName="text-xl text-alf-eerie-black xl:text-2xl"
           >
-            {/* Estrella de fondo (gira lentamente) */}
-            <Image
-              src="/svg/home/consulting/button-project-quote.svg"
-              alt=""
-              width={280}
-              height={280}
-              className="h-auto w-60 animate-slow-spin xl:w-72"
-            />
-            {/* Contenido encima */}
-            <div className="absolute flex flex-col items-center gap-2 text-center">
-              <span className="text-xl font-bold text-alf-eerie-black xl:text-2xl">
-                Cotiza
-                <br />
-                tu proyecto
-              </span>
-              <Image
-                src="/svg/home/consulting/arrow-project-quote.svg"
-                alt=""
-                width={48}
-                height={24}
-                className="max-w-none"
-              />
-            </div>
-          </Link>
+            Cotiza
+            <br />
+            tu proyecto
+          </StarButton>
         </div>
       </div>
     </section>
