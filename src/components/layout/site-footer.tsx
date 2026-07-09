@@ -1,23 +1,16 @@
 import Link from "next/link";
 
-import {
-  contactEmail,
-  primaryLinks,
-  secondaryLinks,
-  socialLinks,
-} from "./footer-links";
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  SearchIcon,
-} from "./footer-icons";
+import { enabledNavLinks, quoteLink } from "./nav-links";
+import { contactEmail, enabledSecondaryLinks, socialLinks } from "./footer-links";
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from "./footer-icons";
 
 const socialIcons = {
   LinkedIn: LinkedInIcon,
   Instagram: InstagramIcon,
   Facebook: FacebookIcon,
 } as const;
+
+const primaryLinks = [...enabledNavLinks, quoteLink];
 
 export function SiteFooter() {
   return (
@@ -28,57 +21,51 @@ export function SiteFooter() {
             <ul className="space-y-0.5 text-sm">
               {primaryLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="hover:underline">
+                  <Link href={link.href} className="capitalize hover:underline">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <ul className="space-y-0.5 text-sm">
-              {secondaryLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="hover:underline">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {enabledSecondaryLinks.length > 0 && (
+              <ul className="space-y-0.5 text-sm">
+                {enabledSecondaryLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="hover:underline">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </nav>
 
-        <div className="flex flex-col gap-6 lg:items-end">
-          {/* Pendiente de definir su comportamiento */}
-          <div aria-hidden="true" className="flex items-center gap-2">
-            <div className="h-7 w-56 rounded-full border border-alf-near-white xl:w-64" />
-            <SearchIcon className="h-7 w-auto max-w-none" />
-          </div>
+        <div className="flex items-center gap-5">
+          <a href={`mailto:${contactEmail}`} className="text-sm hover:underline">
+            {contactEmail}
+          </a>
 
-          <div className="flex items-center gap-5">
-            <a href={`mailto:${contactEmail}`} className="text-sm hover:underline">
-              {contactEmail}
-            </a>
+          <ul className="flex items-center gap-3">
+            {socialLinks.map((social) => {
+              const Icon = socialIcons[social.label as keyof typeof socialIcons];
 
-            <ul className="flex items-center gap-3">
-              {socialLinks.map((social) => {
-                const Icon = socialIcons[social.label as keyof typeof socialIcons];
-
-                return (
-                  <li key={social.label}>
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      aria-label={social.label}
-                      className="block transition-opacity hover:opacity-70"
-                    >
-                      <Icon className="size-6" />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+              return (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={social.label}
+                    className="block transition-opacity hover:opacity-70"
+                  >
+                    <Icon className="size-6" />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
 
@@ -90,6 +77,6 @@ export function SiteFooter() {
         aria-hidden="true"
         className="absolute right-2 bottom-2 size-3 rounded-full border border-alf-near-white"
       />
-    </footer >
+    </footer>
   );
 }

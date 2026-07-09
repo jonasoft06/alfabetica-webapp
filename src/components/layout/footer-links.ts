@@ -3,18 +3,16 @@ export type FooterLink = {
   href: string;
 };
 
-export const primaryLinks: FooterLink[] = [
-  { label: "Nosotros", href: "#" },
-  { label: "Proyectos destacados", href: "#" },
-  { label: "Libros", href: "#" },
-  { label: "Servicios", href: "#" },
-  { label: "Cotizador", href: "#" },
+type ToggleableLink = FooterLink & { enabled: boolean };
+
+const secondaryLinks: ToggleableLink[] = [
+  { label: "FAQ", href: "#faq", enabled: false },
+  { label: "Aviso de privacidad", href: "#", enabled: false },
 ];
 
-export const secondaryLinks: FooterLink[] = [
-  { label: "FAQ", href: "#" },
-  { label: "Aviso de privacidad", href: "#" },
-];
+export const enabledSecondaryLinks = secondaryLinks.filter(
+  (link) => link.enabled
+);
 
 export const socialLinks: FooterLink[] = [
   { label: "LinkedIn", href: "#" },

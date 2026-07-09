@@ -1,6 +1,3 @@
-// src/components/home/how-we-work/step.tsx
-import Image from "next/image";
-
 export type Step = {
   number: number;
   title: React.ReactNode; // el título puede llevar la palabra decorada
