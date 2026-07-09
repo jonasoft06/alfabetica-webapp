@@ -39,7 +39,7 @@ export function ScheduleCallSection() {
         </div>
 
         {/* Zona del botón y las fotos */}
-        <div className="relative mt-14 flex flex-col items-center gap-10 lg:mt-20 lg:min-h-[480px] lg:gap-0">
+        <div className="relative mt-14 flex flex-col items-center gap-10 lg:mt-20 lg:min-h-120 lg:gap-0">
           <Image
             src="/images/home/faq/photo-faql.png"
             alt="Persona leyendo en un lector electrónico"

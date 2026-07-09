@@ -27,7 +27,7 @@ export default function Hero() {
         alt="Persona leyendo un libro"
         width={260}
         height={340}
-        className="absolute -left-45 top-1/2 hidden -translate-y-[65%] lg:block lg:w-[400px] xl:w-[500px]"
+        className="absolute -left-45 top-1/2 hidden translate-y-[65%] lg:block xl:w-100"
         priority
       />
       <Image
@@ -35,7 +35,7 @@ export default function Hero() {
         alt="Persona leyendo en tablet"
         width={260}
         height={340}
-        className="absolute -right-55 top-1/2 hidden -translate-y-[40%] lg:block lg:w-[400px] xl:w-[550px]"
+        className="absolute -right-55 top-1/2 hidden translate-y-[40%] lg:block xl:w-100"
         priority
       />
 
