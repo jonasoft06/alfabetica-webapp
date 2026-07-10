@@ -8,7 +8,7 @@ const projects: Project[] = [
   {
     photo: "/images/home/evidence/photo-evidence.webp",
     shape: "/svg/home/evidence/shape-evidence.svg",
-    shapePosition: "bottom-0 -right-30",
+    shapePosition: "bottom-[0%] right-0 translate-x-[40%]",
     name: "Con Evidencia",
     subtitle: "Revista académica | Centro Universitario de Ciencias de la Salud",
     challenge:
@@ -21,7 +21,7 @@ const projects: Project[] = [
   {
     photo: "/images/home/evidence/photo-financial.webp",
     shape: "/svg/home/evidence/shape-financial.svg",
-    shapePosition: "top-0 left-0",
+    shapePosition: "top-0 left-[65%] -translate-y-1/2",
     name: "Libertad Financiera",
     subtitle: "Informe corporativo",
     challenge:
@@ -34,7 +34,7 @@ const projects: Project[] = [
   {
     photo: "/images/home/evidence/photo-lions.webp",
     shape: "/svg/home/evidence/shape-lions.svg",
-    shapePosition: "top-0 left-0",
+    shapePosition: "top-5 left-10 -translate-x-1/3 -translate-y-1/3",
     name: "Leones de Corazón",
     subtitle: "Libro conmemorativo | Preparatoria 7",
     challenge:
@@ -46,35 +46,43 @@ const projects: Project[] = [
   },
 ];
 
-const INTERVAL = 8000;
+const INTERVAL = 12000;
 
 export default function Evidence() {
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [userTookControl, setUserTookControl] = useState(false);
 
   const goTo = useCallback((index: number) => {
     const total = projects.length;
     setCurrent((index + total) % total);
   }, []);
 
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+  const next = useCallback(() => {
+    setUserTookControl(true);
+    goTo(current + 1);
+  }, [current, goTo]);
+
+  const prev = useCallback(() => {
+    setUserTookControl(true);
+    goTo(current - 1);
+  }, [current, goTo]);
 
   useEffect(() => {
-    if (paused) return;
+    if (hovered || userTookControl) return;
 
     const timer = setInterval(() => {
       setCurrent((c) => (c + 1) % projects.length);
     }, INTERVAL);
 
     return () => clearInterval(timer);
-  }, [paused, current]);
+  }, [hovered, userTookControl, current]);
 
   return (
     <section
       className="bg-alf-near-white"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <Slide project={projects[current]} onPrev={prev} onNext={next} />
     </section>

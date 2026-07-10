@@ -21,30 +21,35 @@ export default function Slide({ project, onPrev, onNext }: SlideProps) {
   return (
     <div className="w-full">
       <div className="relative w-full">
-        <Image
-          src={project.photo}
-          alt={project.name}
-          width={1920}
-          height={1080}
-          priority
-          className="aspect-[4/3] w-full object-cover md:aspect-[2/1] xl:aspect-[21/9]"
-        />
+        {/* Capa recortada: foto + shape decorativo */}
+        <div className="relative overflow-hidden">
+          <Image
+            src={project.photo}
+            alt={project.name}
+            width={1920}
+            height={1080}
+            priority
+            className="aspect-[4/3] w-full object-cover md:aspect-[2/1] xl:aspect-[21/9]"
+          />
 
-        <Image
-          src={project.shape}
-          alt=""
-          aria-hidden="true"
-          width={160}
-          height={160}
-          className={`absolute w-24 max-w-none md:w-32 xl:w-40 ${project.shapePosition}`}
-        />
+          <Image
+            src={project.shape}
+            alt=""
+            aria-hidden="true"
+            width={200}
+            height={200}
+            unoptimized
+            className={`absolute w-40 max-w-none md:w-56 xl:w-72 ${project.shapePosition}`}
+          />
+        </div>
 
-        <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-[10%] items-center gap-2 md:gap-3">
+        {/* Fuera del recorte: la píldora asoma por debajo */}
+        <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-[10%] items-center gap-0 md:gap-1">
           <button
             type="button"
             aria-label="Proyecto anterior"
             onClick={onPrev}
-            className="shrink-0 transition-transform hover:scale-110"
+            className="shrink-0 p-3 transition-transform hover:scale-110"
           >
             <Image
               src="/svg/home/evidence/left-button.svg"
