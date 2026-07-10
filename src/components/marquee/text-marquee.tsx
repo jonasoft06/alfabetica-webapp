@@ -32,7 +32,7 @@ export default function TextMarquee({
       width={32}
       height={32}
       unoptimized
-      className="size-6 max-w-none xl:size-7 2xl:size-8"
+      className="size-5 max-w-none xl:size-6 2xl:size-7"
     />
   );
 
@@ -45,7 +45,7 @@ export default function TextMarquee({
         >
           {item.icon && iconPosition === "before" && icon(item.icon)}
           <span
-            className={`text-xl font-medium whitespace-nowrap xl:text-2xl 2xl:text-3xl ${textClass}`}
+            className={`text-lg font-medium whitespace-nowrap xl:text-xl 2xl:text-2xl ${textClass}`}
           >
             {item.text}
           </span>
