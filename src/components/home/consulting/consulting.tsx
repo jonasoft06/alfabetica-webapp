@@ -9,7 +9,6 @@ export default function Consulting() {
           Consultoría integral y atención personalizada.
         </h2>
 
-        {/* Columna 2: Párrafos */}
         <div className="space-y-3 text-base leading-relaxed text-alf-eerie-black lg:text-lg">
           <p>
             En Alfabética apoyamos a{" "}
@@ -26,7 +25,6 @@ export default function Consulting() {
           </p>
         </div>
 
-        {/* Columna 3: Botón */}
         <div className="flex justify-center lg:justify-end">
           <StarButton
             href="/cotizador"

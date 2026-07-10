@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Marquee } from "@/components/marquee/marquee";
+import { Marquee } from "./marquee";
 
 type MarqueeItem = {
   text: string;
@@ -24,21 +24,32 @@ export default function TextMarquee({
 }: TextMarqueeProps) {
   const repeated = Array.from({ length: repeat }, () => items).flat();
 
+  const icon = (src: string) => (
+    <Image
+      src={src}
+      alt=""
+      aria-hidden="true"
+      width={32}
+      height={32}
+      unoptimized
+      className="size-6 max-w-none xl:size-7 2xl:size-8"
+    />
+  );
+
   return (
     <Marquee className={bgClass}>
       {repeated.map((item, i) => (
-        <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
-          {item.icon && iconPosition === "before" && (
-            <Image src={item.icon} alt="" width={24} height={24} />
-          )}
+        <div
+          key={i}
+          className="flex shrink-0 items-center gap-6 pr-6 xl:gap-8 xl:pr-8"
+        >
+          {item.icon && iconPosition === "before" && icon(item.icon)}
           <span
-            className={`text-xl font-medium whitespace-nowrap ${textClass}`}
+            className={`text-xl font-medium whitespace-nowrap xl:text-2xl 2xl:text-3xl ${textClass}`}
           >
             {item.text}
           </span>
-          {item.icon && iconPosition === "after" && (
-            <Image src={item.icon} alt="" width={24} height={24} />
-          )}
+          {item.icon && iconPosition === "after" && icon(item.icon)}
         </div>
       ))}
     </Marquee>

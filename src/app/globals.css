@@ -162,7 +162,7 @@
 }
 
 .animate-slow-spin {
-  animation: slow-spin 40s linear infinite;
+  animation: slow-spin 100s linear infinite;
 }
 
 @keyframes marquee {
@@ -176,5 +176,13 @@
 }
 
 .animate-marquee {
-  animation: marquee 120s linear infinite;
+  animation: marquee 300s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-slow-spin,
+  .animate-marquee {
+    animation: none;
+  }
 }
