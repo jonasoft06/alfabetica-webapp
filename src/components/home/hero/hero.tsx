@@ -9,20 +9,20 @@ export default function Hero() {
       <FloatingWords />
 
       <Image
-        src="/images/home/hero/photo-book.png"
+        src="/images/home/hero/photo-book.webp"
         alt=""
         aria-hidden="true"
-        width={550}
-        height={550}
+        width={1100}
+        height={1100}
         priority
         className="pointer-events-none absolute top-1/2 hidden max-w-none -translate-y-[65%] select-none lg:-left-28 lg:block lg:w-[320px] xl:-left-40 xl:w-[430px] 2xl:-left-50 2xl:w-[550px]"
       />
       <Image
-        src="/images/home/hero/photo-tablet.png"
+        src="/images/home/hero/photo-tablet.webp"
         alt=""
         aria-hidden="true"
-        width={600}
-        height={600}
+        width={1100}
+        height={1100}
         priority
         className="pointer-events-none absolute top-1/2 hidden max-w-none -translate-y-[40%] select-none lg:-right-28 lg:block lg:w-[340px] xl:-right-44 xl:w-[460px] 2xl:-right-55 2xl:w-[600px]"
       />

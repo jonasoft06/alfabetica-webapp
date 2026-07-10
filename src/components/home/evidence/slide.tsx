@@ -1,4 +1,3 @@
-// src/components/home/evidence/slide.tsx
 import Image from "next/image";
 
 export type Project = {
@@ -21,74 +20,68 @@ type SlideProps = {
 export default function Slide({ project, onPrev, onNext }: SlideProps) {
   return (
     <div className="w-full">
-      {/* Foto con shape y banner sobrepuestos */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full">
         <Image
           src={project.photo}
           alt={project.name}
-          width={1040}
-          height={560}
-          className="h-[400px] w-full object-cover xl:h-[700px]"
+          width={1920}
+          height={1080}
           priority
+          className="aspect-[4/3] w-full object-cover md:aspect-[2/1] xl:aspect-[21/9]"
         />
 
-        {/* Shape decorativo */}
         <Image
           src={project.shape}
           alt=""
+          aria-hidden="true"
           width={160}
           height={160}
-          className={`absolute w-32 xl:w-40 ${project.shapePosition}`}
+          className={`absolute w-24 max-w-none md:w-32 xl:w-40 ${project.shapePosition}`}
         />
 
-        {/* Banner con nombre + botones */}
-        <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-3">
+        <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-[10%] items-center gap-2 md:gap-3">
           <button
             type="button"
-            aria-label="Anterior"
+            aria-label="Proyecto anterior"
             onClick={onPrev}
             className="shrink-0 transition-transform hover:scale-110"
           >
             <Image
               src="/svg/home/evidence/left-button.svg"
               alt=""
+              aria-hidden="true"
               width={40}
               height={40}
-              className="w-8 xl:w-10"
+              unoptimized
+              className="w-4 max-w-none md:w-5 xl:w-6"
             />
           </button>
 
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/svg/home/evidence/banner.svg"
-              alt=""
-              width={320}
-              height={70}
-              className="h-auto w-64 xl:w-80"
-            />
-            <span className="absolute font-heading text-xl font-bold text-alf-eerie-black xl:text-2xl">
+          <div className="flex items-center justify-center rounded-full bg-alf-near-white px-5 py-2.5 md:px-6 md:py-3 xl:px-10 xl:py-4">
+            <span className="font-heading text-base leading-tight font-bold whitespace-nowrap text-alf-eerie-black md:text-lg xl:text-2xl">
               {project.name}
             </span>
           </div>
 
           <button
             type="button"
-            aria-label="Siguiente"
+            aria-label="Proyecto siguiente"
             onClick={onNext}
-            className="shrink-0 transition-transform hover:scale-110"
+            className="shrink-0 p-3 transition-transform hover:scale-110"
           >
             <Image
               src="/svg/home/evidence/right-button.svg"
               alt=""
+              aria-hidden="true"
               width={40}
               height={40}
-              className="w-8 xl:w-10"
+              unoptimized
+              className="w-4 max-w-none md:w-5 xl:w-6"
             />
           </button>
         </div>
       </div>
 
-      {/* Texto debajo */}
       <div className="mx-auto max-w-7xl px-6 py-8">
         <h3 className="mb-6 text-lg text-alf-eerie-black xl:text-xl">
           {project.subtitle}

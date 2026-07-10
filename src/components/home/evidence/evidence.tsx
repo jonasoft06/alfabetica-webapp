@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useCallback, useEffect, useState } from "react";
+
 import Slide, { type Project } from "./slide";
 
 const projects: Project[] = [
   {
-    photo: "/images/home/evidence/photo-evidence.png",
+    photo: "/images/home/evidence/photo-evidence.webp",
     shape: "/svg/home/evidence/shape-evidence.svg",
     shapePosition: "bottom-0 -right-30",
     name: "Con Evidencia",
@@ -18,7 +19,7 @@ const projects: Project[] = [
       "Una revista académica sólida, funcional y visualmente consistente que contribuye a la difusión del conocimiento científico y fortalece la proyección institucional de la universidad.",
   },
   {
-    photo: "/images/home/evidence/photo-financial.png",
+    photo: "/images/home/evidence/photo-financial.webp",
     shape: "/svg/home/evidence/shape-financial.svg",
     shapePosition: "top-0 left-0",
     name: "Libertad Financiera",
@@ -31,7 +32,7 @@ const projects: Project[] = [
       "Una publicación corporativa que fortalece la comunicación institucional y facilita la comprensión de información estratégica.",
   },
   {
-    photo: "/images/home/evidence/photo-lions.png",
+    photo: "/images/home/evidence/photo-lions.webp",
     shape: "/svg/home/evidence/shape-lions.svg",
     shapePosition: "top-0 left-0",
     name: "Leones de Corazón",
@@ -45,34 +46,29 @@ const projects: Project[] = [
   },
 ];
 
-const INTERVAL = 8000; // 8 segundos
+const INTERVAL = 8000;
 
 export default function Evidence() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const goTo = (index: number) => {
-    // Aseguramos que el índice quede dentro del rango (bucle circular).
+  const goTo = useCallback((index: number) => {
     const total = projects.length;
     setCurrent((index + total) % total);
-  };
+  }, []);
 
-  const next = () => goTo(current + 1);
-  const prev = () => goTo(current - 1);
+  const next = useCallback(() => goTo(current + 1), [current, goTo]);
+  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
 
-  // Auto-avance cada 8s, salvo que esté pausado (hover).
   useEffect(() => {
     if (paused) return;
 
-    timerRef.current = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrent((c) => (c + 1) % projects.length);
     }, INTERVAL);
 
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [paused]);
+    return () => clearInterval(timer);
+  }, [paused, current]);
 
   return (
     <section
