@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteNavbar } from "@/components/layout/site-navbar";
 import { SiteFooter } from "@/components/layout/site-footer";
 
 const inter = Inter({
   variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-// Respaldo temporal de IvyPresto Display hasta integrar Adobe Fonts.
-// Cuando llegue el kit de Adobe, se reemplaza esta fuente y todos los
-// títulos se actualizan automáticamente vía --font-heading.
-const playfair = Playfair_Display({
-  variable: "--font-heading",
   subsets: ["latin"],
 });
 
@@ -29,10 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${inter.variable} ${playfair.variable} antialiased`}
-    >
+    <html lang="es" className={`${inter.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
+        <link rel="stylesheet" href="https://use.typekit.net/tgi4woy.css" />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <SiteNavbar />
         {children}

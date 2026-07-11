@@ -45,7 +45,7 @@ export default function TextMarquee({
         >
           {item.icon && iconPosition === "before" && icon(item.icon)}
           <span
-            className={`text-lg font-medium whitespace-nowrap xl:text-xl 2xl:text-2xl ${textClass}`}
+            className={`font-heading text-base font-medium italic whitespace-nowrap xl:text-lg 2xl:text-xl ${textClass}`}
           >
             {item.text}
           </span>
