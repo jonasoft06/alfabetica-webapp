@@ -13,6 +13,7 @@ export default function FaqMarquee() {
       items={items}
       bgClass="bg-alf-tan-sun"
       textClass="text-alf-eerie-black"
+      paddingClass="py-5"
     />
   );
 }

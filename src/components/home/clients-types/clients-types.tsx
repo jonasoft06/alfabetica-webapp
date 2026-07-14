@@ -28,33 +28,32 @@ const columns = [
 export default function ClientsTypes() {
   return (
     <section className="relative overflow-hidden bg-alf-near-white px-6 py-20">
-      {/* Shape decorativo izquierdo — solo escritorio */}
       <Image
         src="/svg/home/clients-types/shape-left-clients.svg"
         alt=""
+        aria-hidden="true"
         width={140}
         height={140}
-        className="absolute left-[4%] top-24 hidden w-28 max-w-none xl:w-36 lg:block"
+        unoptimized
+        className="absolute left-[16%] top-30 hidden w-28 max-w-none xl:w-86 lg:block"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Título */}
-        <h2 className="mb-12 text-center font-heading text-4xl font-bold text-alf-turquoise xl:text-5xl">
+        <h2 className="mb-12 text-center font-heading text-4xl font-semibold text-alf-turquoise xl:text-5xl">
           ¿Con quiénes trabajamos?
         </h2>
 
-        {/* Foto galería de libros */}
         <div className="mb-12 flex justify-center">
           <Image
-            src="/images/home/clients-types/photo-clients.png"
+            src="/images/home/clients-types/photo-clients.webp"
             alt="Galería de libros publicados por Alfabética"
-            width={800}
-            height={400}
+            width={990}
+            height={560}
             className="h-auto w-full max-w-4xl"
           />
         </div>
 
-        {/* Tres columnas de texto */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:gap-12">
           {columns.map((col) => (
             <div key={col.title} className="flex flex-col gap-3">

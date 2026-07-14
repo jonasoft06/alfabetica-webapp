@@ -13,6 +13,7 @@ type TextMarqueeProps = {
   textClass: string;
   iconPosition?: "before" | "after";
   repeat?: number;
+  paddingClass?: string;
 };
 
 export default function TextMarquee({
@@ -21,6 +22,7 @@ export default function TextMarquee({
   textClass,
   iconPosition = "after",
   repeat = 12,
+  paddingClass,
 }: TextMarqueeProps) {
   const repeated = Array.from({ length: repeat }, () => items).flat();
 
@@ -37,7 +39,7 @@ export default function TextMarquee({
   );
 
   return (
-    <Marquee className={bgClass}>
+    <Marquee className={`${bgClass} ${paddingClass ?? ""}`}>
       {repeated.map((item, i) => (
         <div
           key={i}
