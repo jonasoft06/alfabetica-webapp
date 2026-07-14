@@ -1,6 +1,6 @@
 export type Step = {
   number: number;
-  title: React.ReactNode; // el título puede llevar la palabra decorada
+  title: React.ReactNode;
   paragraphs: string[];
 };
 
@@ -11,14 +11,12 @@ type StepProps = {
 export default function Step({ step }: StepProps) {
   return (
     <div className="flex gap-3">
-      {/* Número */}
       <span className="font-heading text-2xl font-bold text-alf-tangerine xl:text-3xl">
         {step.number}.
       </span>
 
-      {/* Contenido: título + párrafos */}
       <div className="flex flex-col gap-3">
-        <h3 className="font-sans text-xl font-bold text-alf-eerie-black xl:text-2xl">
+        <h3 className="font-sans text-xl font-semibold text-alf-eerie-black xl:text-2xl">
           {step.title}
         </h3>
         {step.paragraphs.map((p, i) => (

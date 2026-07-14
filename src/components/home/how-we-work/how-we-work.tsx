@@ -1,7 +1,7 @@
-// src/components/home/how-we-work/how-we-work.tsx
+import Image from "next/image";
+
 import Step, { type Step as StepType } from "./step";
 import DecoratedWord from "./decorated-word";
-import Image from "next/image"
 
 const steps: StepType[] = [
   {
@@ -9,10 +9,7 @@ const steps: StepType[] = [
     title: (
       <>
         Damos claridad en{" "}
-        <DecoratedWord
-          decoration="/svg/home/how-we-work/circle-costs.svg"
-          variant="circle"
-        >
+        <DecoratedWord decoration="/svg/home/how-we-work/circle-costs.svg" variant="circle">
           costos
         </DecoratedWord>
       </>
@@ -26,10 +23,7 @@ const steps: StepType[] = [
     title: (
       <>
         Damos forma al{" "}
-        <DecoratedWord
-          decoration="/svg/home/how-we-work/underline-content.svg"
-          variant="underline"
-        >
+        <DecoratedWord decoration="/svg/home/how-we-work/underline-content.svg" variant="underline">
           contenido
         </DecoratedWord>
       </>
@@ -43,10 +37,7 @@ const steps: StepType[] = [
     number: 3,
     title: (
       <>
-        <DecoratedWord
-          decoration="/svg/home/how-we-work/circle-design.svg"
-          variant="circle"
-        >
+        <DecoratedWord decoration="/svg/home/how-we-work/circle-design.svg" variant="circle">
           Diseñamos
         </DecoratedWord>
         , por dentro y por fuera
@@ -61,10 +52,7 @@ const steps: StepType[] = [
     title: (
       <>
         Protegemos{" "}
-        <DecoratedWord
-          decoration="/svg/home/how-we-work/underline-right.svg"
-          variant="underline"
-        >
+        <DecoratedWord decoration="/svg/home/how-we-work/underline-right.svg" variant="underline">
           los derechos
         </DecoratedWord>{" "}
         de tu obra
@@ -79,10 +67,7 @@ const steps: StepType[] = [
     title: (
       <>
         Producimos versiones{" "}
-        <DecoratedWord
-          decoration="/svg/home/how-we-work/circle-printed.svg"
-          variant="circle"
-        >
+        <DecoratedWord decoration="/svg/home/how-we-work/circle-printed.svg" variant="circle">
           impresas y digitales
         </DecoratedWord>
       </>
@@ -96,10 +81,7 @@ const steps: StepType[] = [
     title: (
       <>
         Llevamos tu libro a donde tu{" "}
-        <DecoratedWord
-          decoration="/svg/home/how-we-work/underline-audience.svg"
-          variant="underline"
-        >
+        <DecoratedWord decoration="/svg/home/how-we-work/underline-audience.svg" variant="underline">
           audiencia
         </DecoratedWord>{" "}
         lo encontrará
@@ -111,84 +93,92 @@ const steps: StepType[] = [
   },
 ];
 
+const firstBlock = steps.slice(0, 3);
+const secondBlock = steps.slice(3, 6);
+
 export default function HowWeWork() {
   return (
-    <section className="relative overflow-hidden bg-alf-crema px-6 py-20">
-      {/* Imágenes decorativas — solo escritorio, ocultas en móvil */}
-      {/* Ilustración izquierda (altura pasos 2-3) */}
-      <Image
-        src="/svg/home/how-we-work/illustration-work.svg"
-        alt=""
-        width={200}
-        height={180}
-        className="absolute left-[6%] top-[42%] hidden w-40 xl:w-52 lg:block"
-      />
-
-      {/* Foto derecha arriba (altura pasos 1-2) */}
-      <div className="absolute right-0 top-[20%] hidden w-[38%] max-w-lg lg:block">
-        <div className="relative">
-          <Image
-            src="/images/home/how-we-work/photo-workr.png"
-            alt="Libros publicados por Alfabética"
-            width={500}
-            height={400}
-            className="relative z-10 h-auto w-full"
-          />
-          {/* Shape decorativo que acompaña la foto */}
-          <Image
-            src="/svg/home/how-we-work/shape-right.svg"
-            alt=""
-            width={300}
-            height={300}
-            className="absolute left-1/2 top-1/2 z-0 w-[120%] max-w-none -translate-x-1/2 -translate-y-1/2"
-          />
-        </div>
-      </div>
-
-      {/* Foto izquierda abajo (altura pasos 4-5) */}
-      <div className="absolute bottom-[8%] left-0 hidden w-[30%] max-w-md lg:block">
-        <div className="relative">
-          <Image
-            src="/images/home/how-we-work/photo-workl.png"
-            alt="Persona leyendo un libro"
-            width={400}
-            height={450}
-            className="relative z-10 h-auto w-full"
-          />
-          {/* Shape decorativo que acompaña la foto */}
-          <Image
-            src="/svg/home/how-we-work/shape-left.svg"
-            alt=""
-            width={120}
-            height={120}
-            className="absolute left-8 top-8 z-20 w-32 max-w-none"
-          />
-        </div>
-      </div>
-
-      {/* Contenido central */}
-      <div className="relative z-10 mx-auto max-w-7xl">
-        {/* Encabezado: título + párrafo introductorio */}
-        <div className="mb-16 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-12">
-          <h2 className="font-heading text-4xl font-bold text-alf-tangerine xl:text-5xl">
+    <section className="overflow-hidden bg-alf-crema px-6 py-20">
+      <div className="mx-auto max-w-7xl">
+        {/* Encabezado */}
+        <div className="mb-16 grid grid-cols-1 items-baseline gap-6 lg:grid-cols-[auto_1fr] lg:gap-8">
+          <h2 className="font-heading text-3xl leading-none font-semibold text-alf-tangerine xl:text-5xl">
             ¿Cómo lo hacemos?
           </h2>
-          <p className="text-sm leading-relaxed text-alf-eerie-black xl:text-base">
+          <p className="max-w-xl text-sm leading-relaxed text-alf-eerie-black xl:text-base">
             Con un equipo de más de 15 años de experiencia en el mundo
             editorial, nuestra consultoría en servicios editoriales integrales
             se especializa en dos cosas:{" "}
-            <strong className="font-semibold">
-              la flexibilidad y la eficiencia
-            </strong>
-            .
+            <strong className="font-semibold">la flexibilidad y la eficiencia</strong>.
           </p>
         </div>
 
-        {/* Pasos en columna central acotada */}
-        <div className="mx-auto flex max-w-2xl flex-col gap-12">
-          {steps.map((step) => (
-            <Step key={step.number} step={step} />
-          ))}
+
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[auto_1fr_auto] lg:gap-8">
+
+          <Image
+            src="/svg/home/how-we-work/illustration-work.svg"
+            alt=""
+            aria-hidden="true"
+            width={200}
+            height={180}
+            unoptimized
+            className="pt-20 pr-5 hidden w-40 max-w-none lg:block xl:w-40"
+          />
+
+          <div className="flex flex-col gap-12">
+            {firstBlock.map((step) => (
+              <Step key={step.number} step={step} />
+            ))}
+          </div>
+
+
+          <div className="relative hidden w-56 shrink-0 lg:block xl:w-70">
+            <Image
+              src="/images/home/how-we-work/photo-workr.webp"
+              alt="Libros publicados por Alfabética"
+              width={310}
+              height={310}
+              className="relative z-10 h-auto max-w-none left-[30%] w-[120%]"
+            />
+            <Image
+              src="/svg/home/how-we-work/shape-right.svg"
+              alt=""
+              aria-hidden="true"
+              width={300}
+              height={300}
+              unoptimized
+              className="absolute top-[30%] left-[110%] z-0 w-[140%] max-w-none -translate-y-[56%]"
+            />
+          </div>
+        </div>
+
+
+        <div className="mt-16 grid grid-cols-1 items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-12">
+          <div className="relative hidden w-72 shrink-0 lg:block xl:w-80">
+            <Image
+              src="/images/home/how-we-work/photo-workl.webp"
+              alt="Persona leyendo un libro"
+              width={441}
+              height={443}
+              className="relative z-10 h-auto max-w-none right-16 w-[135%]"
+            />
+            <Image
+              src="/svg/home/how-we-work/shape-left.svg"
+              alt=""
+              aria-hidden="true"
+              width={120}
+              height={120}
+              unoptimized
+              className="absolute top-1/2 z-0 w-[160%] max-w-none -translate-x-[90%] -translate-y-1/2"
+            />
+          </div>
+
+          <div className="flex flex-col gap-12">
+            {secondBlock.map((step) => (
+              <Step key={step.number} step={step} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

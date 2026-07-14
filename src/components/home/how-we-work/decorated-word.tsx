@@ -22,7 +22,7 @@ export default function DecoratedWord({
         height={60}
         className={
           variant === "circle"
-            ? "absolute left-1/2 top-1/2 z-0 w-[115%] max-w-none -translate-x-1/2 -translate-y-1/2"
+            ? "absolute left-1/2 top-1/2 z-0 w-[105%] max-w-none -translate-x-1/2 -translate-y-1/2"
             : "absolute left-0 top-full z-0 w-full max-w-none -translate-y-1"
         }
       />

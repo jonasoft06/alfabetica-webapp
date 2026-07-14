@@ -41,11 +41,12 @@ export default function TextMarquee({
       {repeated.map((item, i) => (
         <div
           key={i}
-          className="flex shrink-0 items-center gap-6 pr-6 xl:gap-8 xl:pr-8"
+          className="flex shrink-0 items-center gap-3 pr-3"
         >
+          {/* <div className="flex shrink-0 items-center gap-3 pr-6 xl:gap-4 xl:pr-8">  */}
           {item.icon && iconPosition === "before" && icon(item.icon)}
           <span
-            className={`font-heading text-base font-medium italic whitespace-nowrap xl:text-lg 2xl:text-xl ${textClass}`}
+            className={`font-heading text-base font-medium italic tracking-widest  whitespace-nowrap xl:text-lg 2xl:text-xl ${textClass}`}
           >
             {item.text}
           </span>
