@@ -21,7 +21,7 @@ export function ClientsMarquee() {
   const repeated = Array.from({ length: REPEAT }, () => clients).flat();
 
   return (
-    <Marquee className="bg-alf-near-white py-8">
+    <Marquee className="bg-alf-near-white py-14">
       {repeated.map((client, i) => (
         <div key={`${client.name}-${i}`} className="flex shrink-0 px-10">
           <Image
@@ -30,7 +30,7 @@ export function ClientsMarquee() {
             width={160}
             height={48}
             unoptimized
-            className="h-10 w-auto max-w-none object-contain xl:h-12"
+            className="h-6 w-auto max-w-none object-contain xl:h-8"
           />
         </div>
       ))}

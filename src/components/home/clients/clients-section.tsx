@@ -17,7 +17,7 @@ export function ClientsSection() {
             className="h-auto w-64 max-w-none lg:w-80"
           />
 
-          <h2 className="absolute font-heading text-xl whitespace-nowrap text-alf-eerie-black lg:text-2xl">
+          <h2 className="absolute font-heading text-xl whitespace-nowrap text-alf-eerie-black lg:text-3xl">
             Nuestros clientes
           </h2>
         </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Step, { type Step as StepType } from "./step";
-import DecoratedWord from "./decorated-word";
+import DecoratedWord from "@/components/common/decorated-word";
 
 const steps: StepType[] = [
   {
