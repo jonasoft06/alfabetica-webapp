@@ -45,7 +45,6 @@ export default function TextMarquee({
           key={i}
           className="flex shrink-0 items-center gap-3 pr-3"
         >
-          {/* <div className="flex shrink-0 items-center gap-3 pr-6 xl:gap-4 xl:pr-8">  */}
           {item.icon && iconPosition === "before" && icon(item.icon)}
           <span
             className={`font-heading text-base font-medium italic tracking-widest  whitespace-nowrap xl:text-lg 2xl:text-xl ${textClass}`}
