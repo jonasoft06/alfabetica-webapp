@@ -15,11 +15,15 @@ type FaqAccordionProps = {
 
 export function FaqAccordion({ items }: FaqAccordionProps) {
   return (
-    <Accordion type="single" collapsible className="flex w-full flex-col gap-2">
+    <Accordion
+      type="single"
+      collapsible
+      className="flex w-full flex-col border-b border-alf-tangerine"
+    >
       {items.map((item, index) => (
         <AccordionItem key={item.id} value={item.id} className="border-none">
           <AccordionTrigger
-            className="group rounded-sm border border-alf-tangerine bg-alf-tangerine/10 px-4 py-3 text-left text-sm font-normal text-alf-eerie-black hover:no-underline"
+            className="group rounded-none border-x border-t border-alf-tangerine bg-alf-crema px-4 py-3 text-left text-sm font-semibold text-alf-eerie-black hover:no-underline cursor-pointer"
             icon={
               <span className="pointer-events-none mt-1 flex shrink-0 flex-col items-center text-alf-tangerine">
                 <IconQuestion className="w-3.75 group-data-[state=open]:hidden" />
@@ -33,8 +37,8 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
             </span>
           </AccordionTrigger>
 
-          <AccordionContent className="pt-2 pb-0">
-            <div className="rounded-sm border border-alf-tangerine bg-alf-near-white px-6 py-5 text-sm leading-relaxed text-alf-eerie-black lg:px-12">
+          <AccordionContent className="py-0">
+            <div className="border-x border-t border-alf-tangerine bg-alf-near-white px-6 py-5 text-sm leading-relaxed text-alf-eerie-black lg:px-12">
               {item.answer}
             </div>
           </AccordionContent>

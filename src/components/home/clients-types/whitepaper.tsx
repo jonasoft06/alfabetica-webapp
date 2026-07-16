@@ -2,8 +2,6 @@
 import Image from "next/image";
 import DownloadBlock from "./email-form";
 
-// Primera etapa: la descarga del whitepaper aún no está definida
-// (backend + contenido). Se reactiva poniendo esto en true.
 const SHOW_DOWNLOAD = false;
 
 export default function Whitepaper() {
@@ -26,7 +24,6 @@ export default function Whitepaper() {
         className="absolute -bottom-3 z-60 right-[8%] hidden w-32 max-w-none lg:block xl:w-40"
       />
 
-      {/* Solo se renderiza cuando la descarga está activa. */}
       {SHOW_DOWNLOAD && (
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center pb-16">
           <DownloadBlock />

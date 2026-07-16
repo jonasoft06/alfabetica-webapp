@@ -7,9 +7,8 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative w-full overflow-hidden bg-alf-crema py-16 lg:py-24"
+      className="relative z-10 w-full bg-alf-crema py-16"
     >
-      {/* Capa decorativa: hermana del contenedor, no hija */}
       <div aria-hidden="true" className="pointer-events-none select-none">
         <Image
           src="/svg/home/faq/shape-left-faq.svg"
@@ -17,7 +16,7 @@ export function FaqSection() {
           width={0}
           height={0}
           unoptimized
-          className="absolute top-1/2 left-0 hidden w-65 max-w-none -translate-x-1/3 lg:block xl:w-65"
+          className="absolute top-1/2 left-0 hidden w-65 max-w-none -translate-x-1/3 lg:block xl:w-[650px]"
         />
 
         <Image
@@ -26,7 +25,7 @@ export function FaqSection() {
           width={0}
           height={0}
           unoptimized
-          className="absolute top-24 right-0 hidden w-65 max-w-none translate-x-1/4 lg:block xl:w-65"
+          className="absolute top-24 right-0 hidden w-65 max-w-none translate-x-[45%] lg:block xl:w-[500px]"
         />
       </div>
 
