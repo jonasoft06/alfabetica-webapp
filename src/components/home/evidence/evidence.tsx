@@ -10,7 +10,7 @@ const projects: Project[] = [
     shape: "/svg/home/evidence/shape-evidence.svg",
     shapePosition: "bottom-[0%] right-0 translate-x-[40%]",
     name: "Con Evidencia",
-    subtitle: "Revista académica | Centro Universitario de Ciencias de la Salud",
+    subtitle: "Revista académica | Revista de Divulgación del CUCS",
     challenge:
       "Desarrollar una publicación científica capaz de comunicar contenidos especializados de forma clara y accesible, manteniendo al mismo tiempo los estándares propios de una revista académica.",
     solution:
@@ -23,7 +23,7 @@ const projects: Project[] = [
     shape: "/svg/home/evidence/shape-financial.svg",
     shapePosition: "top-0 left-[65%] -translate-y-1/2",
     name: "Libertad Financiera",
-    subtitle: "Informe corporativo",
+    subtitle: "Informe corporativo | Informe de sostenibilidad",
     challenge:
       "Transformar información financiera compleja en una publicación clara, atractiva y alineada con los objetivos de comunicación de la organización.",
     solution:
@@ -36,7 +36,7 @@ const projects: Project[] = [
     shape: "/svg/home/evidence/shape-lions.svg",
     shapePosition: "top-5 left-10 -translate-x-1/3 -translate-y-1/3",
     name: "Leones de Corazón",
-    subtitle: "Libro conmemorativo | Preparatoria 7",
+    subtitle: "Libro conmemorativo | Prepa 7 Vol. II",
     challenge:
       "Documentar la historia, identidad y espíritu de una comunidad educativa mediante una publicación capaz de preservar su memoria institucional.",
     solution:

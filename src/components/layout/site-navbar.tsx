@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { enabledNavLinks, quoteLink } from "./nav-links";
 
 const hasMenu = enabledNavLinks.length > 0;
@@ -45,15 +46,15 @@ export function SiteNavbar() {
 
           <Link
             href={quoteLink.href}
-            className="rounded-full bg-alf-tangerine px-5 py-2 text-sm font-medium text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-2 hover:outline-alf-tangerine xl:px-7 xl:py-3 xl:text-lg"
+            className="rounded-xl bg-alf-tangerine px-5 py-1 text-sm font-medium text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-2 hover:outline-alf-tangerine xl:px-7 xl:py-1 xl:text-lg"
           >
             {quoteLink.label}
           </Link>
 
           {hasMenu && (
-            <button type="button" className="lg:hidden" aria-label="Abrir menú">
+            <Button type="button" className="lg:hidden" aria-label="Abrir menú">
               <Menu className="size-7 text-alf-eerie-black" />
-            </button>
+            </Button>
           )}
         </div>
       </nav>

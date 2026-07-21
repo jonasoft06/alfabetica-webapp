@@ -7,7 +7,7 @@ export function QuoteSuccess() {
         <img
           src="/svg/quote/form/shape-send-left.svg"
           alt=""
-          className="h-16 w-auto lg:absolute lg:top-0 lg:left-0 lg:h-20 lg:-translate-x-1/3 lg:-translate-y-1/3"
+          className="h-18 w-auto sm:absolute sm:top-0 sm:left-0 lg:h-28 sm:-translate-x-[80%] sm:-translate-y-1/4"
         />
 
         {/* Blob grande con el texto superpuesto */}
@@ -15,27 +15,26 @@ export function QuoteSuccess() {
           <img
             src="/svg/quote/form/shape-send-center.svg"
             alt=""
-            className="h-auto max-w-none lg:w-[420px]"
+            className="h-auto w-full max-w-xs lg:w-[420px] lg:max-w-none"
           />
-          <div className="absolute flex max-w-56 flex-col items-center gap-2 px-6 text-center">
-            <h3 className="font-heading text-2xl text-alf-eerie-black">
+          <div className="absolute flex max-w-64 flex-col items-center gap-2 px-6 text-center">
+            <h3 className="font-heading font-semibold text-2xl lg:text-4xl text-alf-eerie-black italic">
               ¡Listo!
             </h3>
-            <p className="font-heading text-xl text-alf-tangerine">
+            <p className="font-heading py-2 text-2xl lg:text-4xl text-alf-tangerine">
               Formulario enviado
             </p>
-            <p className="text-sm text-alf-eerie-black/80">
+            <p className="text-sm text-alf-eerie-black">
               Nuestro equipo revisará la información y te contactará para
               llegar a la mejor solución posible.
             </p>
           </div>
         </div>
 
-        {/* Persona, pegada a la esquina inferior-derecha del blob */}
         <img
           src="/svg/quote/form/illustration-send.svg"
           alt=""
-          className="h-24 w-auto lg:absolute lg:right-0 lg:bottom-0 lg:h-28 lg:translate-x-1/4 lg:translate-y-1/4"
+          className="h-28 w-auto sm:absolute sm:right-0 sm:bottom-0 sm:h-32 lg:h-40 sm:translate-x-[100%] "
         />
       </div>
     </div>

@@ -1,6 +1,7 @@
 // src/components/quote/form/quote-form.tsx
 "use client";
 
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 
@@ -196,14 +197,17 @@ export default function QuoteForm() {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <img
+          <Image
             src="/svg/quote/form/illustration-form.svg"
             alt=""
-            className="h-20 w-auto"
+            aria-hidden="true"
+            width={400}
+            height={400}
+            className="h-30 lg:h-40 w-full"
           />
           <Button
             type="submit"
-            className="bg-alf-tangerine px-8 text-white hover:bg-alf-tangerine/90"
+            className="bg-alf-tangerine tracking-widest px-8 py-6 text-lg text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-solid hover:outline-2 hover:outline-alf-tangerine cursor-pointer"
           >
             Enviar formulario
           </Button>

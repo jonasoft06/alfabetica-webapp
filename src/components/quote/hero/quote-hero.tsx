@@ -4,7 +4,7 @@ import DecoratedWord from "@/components/common/decorated-word";
 
 export default function QuoteHero() {
   return (
-    <section className="relative overflow-hidden bg-alf-near-white px-6 py-16 lg:py-36">
+    <section className="relative overflow-hidden bg-alf-near-white px-6 py-16 lg:py-40">
 
       <Image
         src="/svg/quote/hero/shape-left-quote-hero.svg"
