@@ -9,7 +9,7 @@ export default function Hero() {
       <FloatingWords />
 
       <Image
-        src="/images/home/hero/photo-book.webp"
+        src="/images/brand/photo-book.webp"
         alt=""
         aria-hidden="true"
         width={1100}
@@ -18,7 +18,7 @@ export default function Hero() {
         className="pointer-events-none absolute top-1/2 hidden max-w-none -translate-y-[65%] select-none lg:-left-28 lg:block lg:w-[320px] xl:-left-40 xl:w-[330px] 2xl:-left-45 2xl:w-[450px]"
       />
       <Image
-        src="/images/home/hero/photo-tablet.webp"
+        src="/images/brand/photo-tablet.webp"
         alt=""
         aria-hidden="true"
         width={1100}

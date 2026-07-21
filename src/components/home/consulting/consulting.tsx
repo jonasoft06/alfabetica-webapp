@@ -28,8 +28,8 @@ export default function Consulting() {
         <div className="flex justify-center lg:justify-end">
           <StarButton
             href="/cotizador"
-            shapeSrc="/svg/home/consulting/button-project-quote.svg"
-            arrowSrc="/svg/home/consulting/arrow-project-quote.svg"
+            shapeSrc="/svg/home/consulting/button-project-consulting.svg"
+            arrowSrc="/svg/brand/arrow-project.svg"
             shapeClassName="w-60 animate-slow-spin xl:w-72"
             labelClassName="text-xl text-alf-eerie-black xl:text-2xl"
           >
