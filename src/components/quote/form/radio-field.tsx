@@ -57,7 +57,7 @@ export function RadioField<T extends FieldValues>({
             onValueChange={field.onChange}
             className={cn(
               illustrations
-                ? "grid grid-cols-1 gap-8 md:grid-cols-3"
+                ? "grid grid-cols-1 gap-8 pl-8 md:grid-cols-3"
                 : "gap-4 pl-8",
             )}
           >
@@ -73,12 +73,13 @@ export function RadioField<T extends FieldValues>({
                   className={cn(
                     "flex items-center gap-3",
                     illustrations && "flex-col text-center",
-                    showConditional && "flex-wrap sm:flex-nowrap",
+                    showConditional &&
+                    "flex-col items-start md:flex-row md:items-center",
                   )}
                 >
                   <FieldLabel
                     htmlFor={`${name}-${opt.value}`}
-                    className="has-[>[data-slot=field]]:rounded-none has-[>[data-slot=field]]:border-0 has-[>[data-slot=field]]:bg-transparent *:data-[slot=field]:p-0 has-data-checked:border-transparent has-data-checked:bg-transparent"
+                    className="has-[>[data-slot=field]]:w-fit has-[>[data-slot=field]]:rounded-none has-[>[data-slot=field]]:border-0 has-[>[data-slot=field]]:bg-transparent *:data-[slot=field]:p-0 has-data-checked:border-transparent has-data-checked:bg-transparent"
                   >
                     <Field
                       orientation="horizontal"
@@ -109,7 +110,7 @@ export function RadioField<T extends FieldValues>({
                   )}
 
                   {showConditional && (
-                    <div className="min-w-48 flex-1">
+                    <div className="w-full md:min-w-48 md:flex-1">
                       <TextField
                         control={control}
                         name={conditionalText.name}

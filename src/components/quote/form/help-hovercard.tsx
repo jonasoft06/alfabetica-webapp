@@ -1,4 +1,4 @@
-// src/components/quote/form/help-popover.tsx
+// src/components/quote/form/help-hovercard.tsx
 "use client";
 
 import { useState } from "react";
@@ -34,7 +34,11 @@ export function HelpHoverCard({ children }: HelpHoverProps) {
           />
         </button>
       </HoverCardTrigger>
-      <HoverCardContent className="text-sm" sideOffset={8}>
+      <HoverCardContent
+        align="start"
+        sideOffset={8}
+        className="m-3 p-2 w-80 space-y-3 bg-alf-near-white/70 text-sm text-alf-eerie-black italic backdrop-blur-sm"
+      >
         {children}
       </HoverCardContent>
     </HoverCard>

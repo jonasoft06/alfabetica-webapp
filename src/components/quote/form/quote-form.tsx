@@ -61,7 +61,7 @@ export default function QuoteForm() {
             triggerValue: "otro",
             name: "tipoPublicacionOtro",
             label: "Especifica el tipo de publicación",
-            placeholder: "Introduce el tipo de publicación",
+            placeholder: "*Introduce el tipo de publicación*",
           }}
         />
 
@@ -107,16 +107,21 @@ export default function QuoteForm() {
             <span className="inline-flex items-center gap-1.5">
               7. Tipo de papel:
               <HelpHoverCard>
-                <p className="mb-2 font-semibold">Sobre el tipo de papel:</p>
+                <p className="font-semibold">Sobre el tipo de papel:</p>
                 <p>
                   El tipo y gramaje del papel influyen tanto en la apariencia del
-                  libro como en su costo de impresión. El papel Bond ofrece un
-                  acabado blanco y nítido, ideal para textos e imágenes de alto
-                  contraste, mientras que el papel Cultural tiene un tono ahuesado
-                  que reduce el reflejo y brinda una experiencia de lectura más
-                  cómoda. Además, un gramaje de 90 g proporciona mayor grosor y
-                  rigidez que uno de 75 g. La cotización se realiza según el tipo y
-                  peso de papel que elijas.
+                  libro como en su costo de impresión.
+                </p>
+                <p>
+                  <strong>El papel Bond</strong> ofrece un acabado blanco y nítido,
+                  ideal para textos e imágenes de alto contraste, mientras que el{" "}
+                  <strong>papel Cultural</strong> tiene un tono ahuesado que reduce
+                  el reflejo y brinda una experiencia de lectura más cómoda.
+                </p>
+                <p>
+                  Además, un gramaje de 90 g proporciona mayor grosor y rigidez que
+                  uno de 75 g. La cotización se realiza{" "}
+                  <strong>según el tipo y peso de papel que elijas</strong>.
                 </p>
               </HelpHoverCard>
             </span>
@@ -126,7 +131,7 @@ export default function QuoteForm() {
             triggerValue: "otro",
             name: "tipoPapelOtro",
             label: "Especifica el tipo de papel",
-            placeholder: "Introduce el tipo de papel que quisieras cotizar",
+            placeholder: "*Introduce el tipo de papel que quisieras cotizar*",
           }}
         />
 
@@ -149,9 +154,21 @@ export default function QuoteForm() {
             <span className="inline-flex items-center gap-1.5">
               9. Trámites:
               <HelpHoverCard>
-                <p className="mb-2 font-semibold">Sobre los trámites:</p>
+                <p className="font-semibold">Sobre los trámites:</p>
                 <p>
-                  El ISBN identifica tu libro como una publicación oficial y es indispensable para su venta y distribución en librerías y plataformas.<br />El DOI es un identificador permanente recomendado para publicaciones académicas o de investigación que requieren ser citadas y localizadas en línea.< br />Si tu obra tiene fines comerciales, el ISBN suele ser suficiente; si además tendrá un enfoque académico o científico, puede ser conveniente solicitar ambos.
+                  <strong>El ISBN</strong> identifica tu libro como una publicación
+                  oficial y es indispensable para su venta y distribución en
+                  librerías y plataformas.
+                </p>
+                <p>
+                  <strong>El DOI</strong> es un identificador permanente recomendado
+                  para publicaciones académicas o de investigación que requieren ser
+                  citadas y localizadas fácilmente en línea.
+                </p>
+                <p>
+                  Si tu obra tiene fines comerciales, el ISBN suele ser suficiente;
+                  si además tendrá un enfoque académico o científico,{" "}
+                  <strong>puede ser conveniente solicitar ambos</strong>.
                 </p>
               </HelpHoverCard>
             </span>
