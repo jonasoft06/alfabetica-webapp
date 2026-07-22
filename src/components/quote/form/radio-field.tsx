@@ -50,7 +50,7 @@ export function RadioField<T extends FieldValues>({
       name={name}
       render={({ field, fieldState }) => (
         <FieldSet>
-          <FieldLegend>{legend}</FieldLegend>
+          <FieldLegend className="mb-4 font-semibold data-[variant=legend]:text-lg">{legend}</FieldLegend>
           <RadioGroup
             name={field.name}
             value={field.value ?? ""}
@@ -58,7 +58,7 @@ export function RadioField<T extends FieldValues>({
             className={cn(
               illustrations
                 ? "grid grid-cols-1 gap-8 md:grid-cols-3"
-                : "pl-4",
+                : "gap-4 pl-8",
             )}
           >
             {options.map((opt) => {
@@ -76,7 +76,10 @@ export function RadioField<T extends FieldValues>({
                     showConditional && "flex-wrap sm:flex-nowrap",
                   )}
                 >
-                  <FieldLabel htmlFor={`${name}-${opt.value}`}>
+                  <FieldLabel
+                    htmlFor={`${name}-${opt.value}`}
+                    className="has-[>[data-slot=field]]:rounded-none has-[>[data-slot=field]]:border-0 has-[>[data-slot=field]]:bg-transparent *:data-[slot=field]:p-0 has-data-checked:border-transparent has-data-checked:bg-transparent"
+                  >
                     <Field
                       orientation="horizontal"
                       data-invalid={fieldState.invalid}
@@ -85,8 +88,13 @@ export function RadioField<T extends FieldValues>({
                         value={opt.value}
                         id={`${name}-${opt.value}`}
                         aria-invalid={fieldState.invalid}
+                        className={cn(
+                          "size-6 border-0 bg-alf-crema ring ring-inset ring-alf-tangerine cursor-pointer",
+                          "data-checked:bg-alf-crema data-checked:ring-alf-tangerine",
+                          "[&_[data-slot=radio-group-indicator]>span]:size-5 [&_[data-slot=radio-group-indicator]>span]:bg-alf-tangerine",
+                        )}
                       />
-                      <FieldTitle className="font-normal">
+                      <FieldTitle className="font-normal italic text-sm">
                         {opt.label}
                       </FieldTitle>
                     </Field>
