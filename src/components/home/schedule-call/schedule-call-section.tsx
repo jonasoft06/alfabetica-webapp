@@ -6,7 +6,7 @@ const SHOW_SCHEDULE = false;
 
 export function ScheduleCallSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-alf-crema pb-20 lg:pb-32">
+    <section id="contacto" className="relative w-full overflow-hidden bg-alf-crema pb-20 lg:pb-32">
       <div className="mx-auto w-full max-w-7xl px-6">
         {/* Bloque de copy */}
         <div className="flex flex-col items-center gap-6 lg:flex-row lg:justify-center lg:gap-12">

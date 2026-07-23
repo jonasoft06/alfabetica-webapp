@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { enabledNavLinks, quoteLink } from "./nav-links";
+import { SmoothScrollLink } from "@/components/layout/smooth-scroll-link";
 
 const hasMenu = enabledNavLinks.length > 0;
 
@@ -23,26 +24,22 @@ export function SiteNavbar() {
         </Link>
 
         <div className="flex items-center gap-8 xl:gap-12">
-          {enabledNavLinks.length > 0 && (
-            <div className="hidden items-center gap-8 lg:flex xl:gap-12">
-              {enabledNavLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group relative text-sm text-alf-eerie-black xl:text-lg"
-                >
-                  {item.label}
-                  <Image
-                    src={item.circle}
-                    alt=""
-                    aria-hidden="true"
-                    fill
-                    className="pointer-events-none scale-135 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                  />
-                </Link>
-              ))}
-            </div>
-          )}
+          {enabledNavLinks.map((item) => (
+            <SmoothScrollLink
+              key={item.href}
+              href={item.href}
+              className="group relative text-sm text-alf-eerie-black xl:text-lg"
+            >
+              {item.label}
+              <Image
+                src={item.circle}
+                alt=""
+                aria-hidden="true"
+                fill
+                className="pointer-events-none scale-135 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+              />
+            </SmoothScrollLink>
+          ))}
 
           <Link
             href={quoteLink.href}

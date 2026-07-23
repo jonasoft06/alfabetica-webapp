@@ -6,16 +6,15 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "nosotros", href: "/nosotros", circle: "/svg/home/hero/circle-us.svg", enabled: true },
-  { label: "servicios", href: "/servicios", circle: "/svg/home/hero/circle-services.svg", enabled: true },
-  { label: "proyectos", href: "/proyectos", circle: "/svg/home/hero/circle-projects.svg", enabled: true },
-  { label: "libros", href: "/libros", circle: "/svg/home/hero/circle-books.svg", enabled: true },
-  { label: "contacto", href: "/contacto", circle: "/svg/home/hero/circle-contact.svg", enabled: true },
+  { label: "nosotros", href: "/#nosotros", circle: "/svg/home/hero/circle-us.svg", enabled: true },
+  { label: "servicios", href: "/#servicios", circle: "/svg/home/hero/circle-services.svg", enabled: true },
+  { label: "proyectos", href: "/#proyectos", circle: "/svg/home/hero/circle-projects.svg", enabled: true },
+  { label: "libros", href: "/#libros", circle: "/svg/home/hero/circle-books.svg", enabled: true },
+  { label: "contacto", href: "/#contacto", circle: "/svg/home/hero/circle-contact.svg", enabled: true },
 ];
 
 export const enabledNavLinks = navLinks.filter((link) => link.enabled);
 
-/** Siempre visible. Se pinta como botón en el navbar y como enlace en el footer. */
 export const quoteLink = {
   label: "cotizador",
   href: "/cotizador",

@@ -80,6 +80,7 @@ export default function Evidence() {
 
   return (
     <section
+      id="proyectos"
       className="bg-alf-near-white"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

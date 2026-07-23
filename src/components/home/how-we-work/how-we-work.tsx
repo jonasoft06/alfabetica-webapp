@@ -98,7 +98,7 @@ const secondBlock = steps.slice(3, 6);
 
 export default function HowWeWork() {
   return (
-    <section className="overflow-hidden bg-alf-crema px-6 py-20">
+    <section id="libros" className="overflow-hidden bg-alf-crema px-6 py-20">
       <div className="mx-auto max-w-7xl">
         {/* Encabezado */}
         <div className="mb-16 grid grid-cols-1 items-baseline gap-6 lg:grid-cols-[auto_1fr] lg:gap-8">

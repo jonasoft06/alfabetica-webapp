@@ -2,7 +2,7 @@ import { StarButton } from "@/components/common/star-button";
 
 export default function Consulting() {
   return (
-    <section className="bg-alf-near-white px-6 py-14 lg:py-20 xl:py-24">
+    <section id="nosotros" className="bg-alf-near-white px-6 py-14 lg:py-20 xl:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-14 lg:grid-cols-[1fr_1.1fr_0.75fr] lg:gap-14 xl:gap-20">
         {/* Columna 1: Título */}
         <h2 className="font-sans text-3xl leading-snug font-bold text-balance text-alf-turquoise lg:text-end">
