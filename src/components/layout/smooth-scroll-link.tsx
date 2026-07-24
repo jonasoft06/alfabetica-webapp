@@ -7,12 +7,33 @@ import { MouseEvent, ReactNode } from "react";
 type SmoothScrollLinkProps = LinkProps & {
   children: ReactNode;
   className?: string;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
+  scrollDelayMs?: number;
 };
+
+function scrollToSection(hash: string) {
+  const target = document.getElementById(hash);
+  if (!target) return;
+
+  const header = document.querySelector("header");
+  const headerHeight = header?.getBoundingClientRect().height ?? 0;
+
+  const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+  window.scrollTo({
+    top: targetTop - headerHeight,
+    behavior: "smooth",
+  });
+
+  window.history.pushState(null, "", `#${hash}`);
+}
 
 export function SmoothScrollLink({
   href,
   children,
   className,
+  onClick,
+  scrollDelayMs = 0,
   ...props
 }: SmoothScrollLinkProps) {
   const pathname = usePathname();
@@ -23,9 +44,17 @@ export function SmoothScrollLink({
 
     if (isHomeAnchor && pathname === "/") {
       event.preventDefault();
-      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-      window.history.pushState(null, "", `#${hash}`);
+      onClick?.(event);
+
+      if (scrollDelayMs > 0) {
+        window.setTimeout(() => scrollToSection(hash), scrollDelayMs);
+      } else {
+        scrollToSection(hash);
+      }
+      return;
     }
+
+    onClick?.(event);
   }
 
   return (

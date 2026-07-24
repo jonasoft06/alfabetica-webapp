@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Menu } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { SiteMobileMenu } from "./site-mobile-menu";
 import { enabledNavLinks, quoteLink } from "./nav-links";
-import { SmoothScrollLink } from "@/components/layout/smooth-scroll-link";
-
-const hasMenu = enabledNavLinks.length > 0;
+import { SmoothScrollLink } from "./smooth-scroll-link";
 
 export function SiteNavbar() {
   return (
@@ -24,35 +21,35 @@ export function SiteNavbar() {
         </Link>
 
         <div className="flex items-center gap-8 xl:gap-12">
-          {enabledNavLinks.map((item) => (
-            <SmoothScrollLink
-              key={item.href}
-              href={item.href}
-              className="group relative text-sm text-alf-eerie-black xl:text-lg"
-            >
-              {item.label}
-              <Image
-                src={item.circle}
-                alt=""
-                aria-hidden="true"
-                fill
-                className="pointer-events-none scale-135 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-              />
-            </SmoothScrollLink>
-          ))}
+          {enabledNavLinks.length > 0 && (
+            <div className="hidden items-center gap-8 md:flex xl:gap-12">
+              {enabledNavLinks.map((item) => (
+                <SmoothScrollLink
+                  key={item.href}
+                  href={item.href}
+                  className="group relative text-sm text-alf-eerie-black xl:text-lg"
+                >
+                  {item.label}
+                  <Image
+                    src={item.circle}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    className="pointer-events-none scale-135 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  />
+                </SmoothScrollLink>
+              ))}
+            </div>
+          )}
 
           <Link
             href={quoteLink.href}
-            className="rounded-xl bg-alf-tangerine px-5 py-1 text-sm font-medium text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-2 hover:outline-alf-tangerine xl:px-7 xl:py-1 xl:text-lg"
+            className="hidden rounded-xl bg-alf-tangerine px-5 py-1 text-sm font-medium text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-2 hover:outline-alf-tangerine md:block xl:px-7 xl:py-1 xl:text-lg"
           >
             {quoteLink.label}
           </Link>
 
-          {hasMenu && (
-            <Button type="button" className="lg:hidden" aria-label="Abrir menú">
-              <Menu className="size-7 text-alf-eerie-black" />
-            </Button>
-          )}
+          <SiteMobileMenu />
         </div>
       </nav>
     </header>

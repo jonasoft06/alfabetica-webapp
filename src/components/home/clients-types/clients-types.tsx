@@ -27,7 +27,7 @@ const columns = [
 
 export default function ClientsTypes() {
   return (
-    <section id="servicios" className="relative overflow-hidden bg-alf-near-white px-6 py-20">
+    <section id="servicios" className="relative overflow-hidden bg-alf-near-white px-6 py-10">
       <Image
         src="/svg/home/clients-types/shape-left-clients.svg"
         alt=""
@@ -35,7 +35,7 @@ export default function ClientsTypes() {
         width={140}
         height={140}
         unoptimized
-        className="absolute left-[16%] top-30 hidden w-28 max-w-none xl:w-86 lg:block"
+        className="absolute left-[17%] top-25 hidden w-28 max-w-none xl:w-76 lg:block"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">

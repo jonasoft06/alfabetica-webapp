@@ -3,6 +3,7 @@ import Link from "next/link";
 import { enabledNavLinks, quoteLink } from "./nav-links";
 import { contactEmail, enabledSecondaryLinks, socialLinks } from "./footer-links";
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from "./footer-icons";
+import { SmoothScrollLink } from "@/components/layout/smooth-scroll-link";
 
 const socialIcons = {
   LinkedIn: LinkedInIcon,
@@ -21,9 +22,9 @@ export function SiteFooter() {
             <ul className="space-y-0.5 text-sm">
               {primaryLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="capitalize hover:underline">
+                  <SmoothScrollLink href={link.href} className="capitalize hover:underline">
                     {link.label}
-                  </Link>
+                  </SmoothScrollLink>
                 </li>
               ))}
             </ul>

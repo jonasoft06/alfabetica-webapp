@@ -7,7 +7,7 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative z-10 w-full bg-alf-crema py-16"
+      className="relative z-10 w-full bg-alf-crema py-10"
     >
       <div aria-hidden="true" className="pointer-events-none select-none">
         <Image
