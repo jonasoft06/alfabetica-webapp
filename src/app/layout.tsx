@@ -10,9 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alfabética — Armamos tu libro de pies a cabeza",
+  title: {
+    template: "%s | Alfabética",
+    default: "Alfabética | Consultoría editorial integral",
+  },
   description:
-    "Consultoría editorial integral. Apoyamos a autores, editoriales, empresas e instituciones en la creación de sus publicaciones.",
+    "Acompañamos a autores, editoriales, empresas e instituciones en todo el proceso de creación de su libro: desde la idea hasta la impresión y distribución digital.",
 };
 
 export default function RootLayout({
