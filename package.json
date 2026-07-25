@@ -1,6 +1,7 @@
 {
   "name": "alfabetica-webapp",
   "version": "0.1.0",
+  "packageManager": "pnpm@10.23.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
