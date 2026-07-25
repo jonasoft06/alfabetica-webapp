@@ -16,7 +16,7 @@ export default function SolutionsMarquee() {
   return (
     <Marquee
       items={items}
-      bgClass="bg-alf-turquoise"
+      bgClass="bg-[oklch(0.52_0.105_207)]"
       textClass="text-alf-near-white"
     />
   );

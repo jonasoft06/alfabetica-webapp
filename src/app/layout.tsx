@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteNavbar } from "@/components/layout/site-navbar";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { TypekitStylesheet } from "@/components/layout/typekit-stylesheet";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -29,12 +30,12 @@ export default function RootLayout({
     <html lang="es" className={`${inter.variable} antialiased`}>
       <head>
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
-        <link rel="stylesheet" href="https://use.typekit.net/tgi4woy.css" />
       </head>
       <body className="flex min-h-dvh flex-col">
+        <TypekitStylesheet />
         <OrganizationJsonLd />
         <SiteNavbar />
-        {children}
+        <main>{children}</main>
         <SiteFooter />
       </body>
     </html>

@@ -16,6 +16,7 @@ export default function HeroCharacter() {
       <Image
         src="/svg/brand/character-illustration.svg"
         alt="Ilustración de una persona bajo un libro abierto"
+        priority
         width={220}
         height={160}
         className="h-auto w-[180px] max-w-none lg:w-[220px]"

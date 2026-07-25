@@ -89,6 +89,7 @@ export function RadioField<T extends FieldValues>({
                         value={opt.value}
                         id={`${name}-${opt.value}`}
                         aria-invalid={fieldState.invalid}
+                        aria-label={opt.label}
                         className={cn(
                           "size-6 border-0 bg-alf-crema ring ring-inset ring-alf-tangerine cursor-pointer",
                           "data-checked:bg-alf-crema data-checked:ring-alf-tangerine",

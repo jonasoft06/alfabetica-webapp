@@ -22,7 +22,7 @@ export function SiteFooter() {
             <ul className="space-y-0.5 text-sm">
               {primaryLinks.map((link) => (
                 <li key={link.label}>
-                  <SmoothScrollLink href={link.href} className="capitalize hover:underline">
+                  <SmoothScrollLink href={link.href} className="inline-block py-2 capitalize hover:underline">
                     {link.label}
                   </SmoothScrollLink>
                 </li>
