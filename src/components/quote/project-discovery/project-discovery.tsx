@@ -1,9 +1,13 @@
 // src/components/quote/project-discovery.tsx
+"use client";
+
 import Image from "next/image";
 
 import { StarButton } from "@/components/common/star-button";
+import { useCalendlyPopup } from "@/hooks/use-calendly-popup";
 
 export default function ProjectDiscovery() {
+  const { openPopup } = useCalendlyPopup();
   return (
     <section className="relative overflow-hidden bg-alf-near-white px-6 py-20 lg:py-44">
 
@@ -88,17 +92,16 @@ export default function ProjectDiscovery() {
           </p>
 
           <StarButton
-            href="/CAMBIAR-ESTO"
+            onClick={openPopup}
             shapeSrc="/svg/quote/project-discovery/button-project.svg"
             arrowSrc="/svg/brand/arrow-project.svg"
             shapeClassName="w-36 animate-slow-spin xl:w-58"
             labelClassName="text-sm text-alf-eerie-black xl:text-base"
+            className="cursor-pointer"
           >
-            Agenda
+            Agenda una
             <br />
-            una
-            <br />
-            reunión
+            videollamada
           </StarButton>
         </div>
       </div>

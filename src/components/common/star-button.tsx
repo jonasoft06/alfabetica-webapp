@@ -1,38 +1,41 @@
-import type { ReactNode } from "react";
+import type { ReactNode, MouseEventHandler } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
-type StarButtonProps = {
-  href: string;
+type StarButtonBaseProps = {
   shapeSrc: string;
   arrowSrc: string;
   children: ReactNode;
-  /** Clases sobre el SVG de la figura: tamaño y animación. */
   shapeClassName?: string;
-  /** Clases sobre el texto: color y escala tipográfica. */
   labelClassName?: string;
   className?: string;
 };
 
-export function StarButton({
-  href,
+type StarButtonAsLink = StarButtonBaseProps & {
+  href: string;
+  onClick?: never;
+};
+
+type StarButtonAsButton = StarButtonBaseProps & {
+  href?: never;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+};
+
+type StarButtonProps = StarButtonAsLink | StarButtonAsButton;
+
+function StarButtonContent({
   shapeSrc,
   arrowSrc,
   children,
   shapeClassName,
   labelClassName,
-  className,
-}: StarButtonProps) {
+}: Pick<StarButtonBaseProps,
+  "shapeSrc" | "arrowSrc" | "children" | "shapeClassName" | "labelClassName"
+>) {
   return (
-    <Link
-      href={href}
-      className={cn(
-        "group relative flex items-center justify-center",
-        className
-      )}
-    >
+    <>
       <Image
         src={shapeSrc}
         alt=""
@@ -54,6 +57,42 @@ export function StarButton({
           className="max-w-none"
         />
       </div>
+    </>
+  );
+}
+
+export function StarButton(props: StarButtonProps) {
+  const { shapeSrc, arrowSrc, children, shapeClassName, labelClassName, className } = props;
+  const sharedClassName = cn(
+    "group relative flex items-center justify-center",
+    className
+  );
+
+  if ("onClick" in props && props.onClick) {
+    return (
+      <button type="button" onClick={props.onClick} className={sharedClassName}>
+        <StarButtonContent
+          shapeSrc={shapeSrc}
+          arrowSrc={arrowSrc}
+          shapeClassName={shapeClassName}
+          labelClassName={labelClassName}
+        >
+          {children}
+        </StarButtonContent>
+      </button>
+    );
+  }
+
+  return (
+    <Link href={props.href} className={sharedClassName}>
+      <StarButtonContent
+        shapeSrc={shapeSrc}
+        arrowSrc={arrowSrc}
+        shapeClassName={shapeClassName}
+        labelClassName={labelClassName}
+      >
+        {children}
+      </StarButtonContent>
     </Link>
   );
 }
