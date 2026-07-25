@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OrganizationJsonLd } from "@/components/seo/organization-json-ld";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteNavbar } from "@/components/layout/site-navbar";
@@ -31,6 +32,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/tgi4woy.css" />
       </head>
       <body className="flex min-h-dvh flex-col">
+        <OrganizationJsonLd />
         <SiteNavbar />
         {children}
         <SiteFooter />

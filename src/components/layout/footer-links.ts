@@ -15,9 +15,9 @@ export const enabledSecondaryLinks = secondaryLinks.filter(
 );
 
 export const socialLinks: FooterLink[] = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/alfabetica/" },
-  { label: "Instagram", href: "https://www.instagram.com/alfabetica.mx?igsh=MW9kMzU5dWlza3h0MQ==" },
-  { label: "Facebook", href: "https://www.facebook.com/share/1JWYhyWWkC/?mibextid=wwXIfr" },
+  { label: "LinkedIn", href: " https://www.linkedin.com/company/alfabetica/" },
+  { label: "Instagram", href: "https://www.instagram.com/alfabetica.mx/" },
+  { label: "Facebook", href: " https://www.facebook.com/alfabetica.mx/" },
 ];
 
 export const contactEmail = "contacto@alfabetica.com.mx";
