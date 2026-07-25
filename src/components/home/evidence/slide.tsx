@@ -29,7 +29,7 @@ export default function Slide({ project, onPrev, onNext }: SlideProps) {
             width={1920}
             height={1080}
             priority
-            className="aspect-[4/3] w-full object-cover md:aspect-[2/1] xl:aspect-[21/9]"
+            className="aspect-4/3 w-full object-cover md:aspect-2/1 xl:aspect-21/9"
           />
 
           <Image

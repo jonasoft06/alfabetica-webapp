@@ -46,9 +46,21 @@ export default function QuoteForm() {
     },
   });
 
-  function onSubmit(values: QuoteFormValues) {
-    // Fase 8: aquí irá el POST al Route Handler.
-    console.log(values);
+  async function onSubmit(values: QuoteFormValues) {
+    const response = await fetch("/api/cotizador", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
+
+    if (!response.ok) {
+      form.setError("root", {
+        message: "Hubo un problema al enviar tu solicitud. Intenta de nuevo.",
+      });
+      throw new Error("Fallo el envío del formulario");
+    }
+
+    form.reset();
   }
 
   return (
@@ -227,16 +239,25 @@ export default function QuoteForm() {
             height={400}
             className="h-30 lg:h-40 w-full"
           />
+
           <Button
             type="submit"
-            className="bg-alf-tangerine tracking-widest px-8 py-6 text-lg text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-solid hover:outline-2 hover:outline-alf-tangerine cursor-pointer"
+            disabled={form.formState.isSubmitting}
+            className="bg-alf-tangerine tracking-widest px-8 py-6 text-lg text-alf-near-white transition-colors hover:bg-transparent hover:text-alf-eerie-black hover:outline-solid hover:outline-2 hover:outline-alf-tangerine cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Enviar formulario
+            {form.formState.isSubmitting ? "Enviando..." : "Enviar formulario"}
           </Button>
         </div>
       </form>
 
-      {true && <QuoteSuccess />}
+      {form.formState.errors.root && (
+        <p className="text-center text-sm text-red-600">
+          {form.formState.errors.root.message}
+        </p>
+      )}
+
+      {form.formState.isSubmitSuccessful && <QuoteSuccess />}
+
     </section>
   );
 }
