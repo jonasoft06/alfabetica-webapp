@@ -15,9 +15,10 @@ import {
 import { getLabel } from "@/lib/quote-labels";
 import QuoteNotificationEmail from "@/emails/quote-notification";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   const body = await request.json();
   const parsed = quoteSchema.safeParse(body);
 
