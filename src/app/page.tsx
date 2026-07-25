@@ -11,10 +11,12 @@ import FaqMarquee from "@/components/marquee/faq-marquee";
 import { FaqSection } from "@/components/home/faq/faq-section";
 import { ScheduleCallSection } from "@/components/home/schedule-call/schedule-call-section";
 import { ClientsSection } from "@/components/home/clients/clients-section";
+import { HashScrollOnLoad } from "@/components/layout/hash-scroll-on-load"
 
 export default function Home() {
   return (
     <>
+      <HashScrollOnLoad />
       <Hero />
       <Consulting />
       <SolutionsMarquee />

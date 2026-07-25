@@ -11,7 +11,7 @@ type SmoothScrollLinkProps = LinkProps & {
   scrollDelayMs?: number;
 };
 
-function scrollToSection(hash: string) {
+export function scrollToSection(hash: string, behavior: ScrollBehavior = "smooth") {
   const target = document.getElementById(hash);
   if (!target) return;
 
@@ -22,7 +22,7 @@ function scrollToSection(hash: string) {
 
   window.scrollTo({
     top: targetTop - headerHeight,
-    behavior: "smooth",
+    behavior,
   });
 
   window.history.pushState(null, "", `#${hash}`);
