@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alfabetica.com.mx"),
   title: {
     template: "%s | Alfabética",
     default: "Alfabética | Consultoría editorial integral",
