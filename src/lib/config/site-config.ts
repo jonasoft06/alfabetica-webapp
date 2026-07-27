@@ -1,0 +1,1 @@
+export const CALENDLY_URL = "https://calendly.com/contacto-alfabetica/30min";

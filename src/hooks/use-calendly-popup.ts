@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef } from "react";
 
+import { CALENDLY_URL } from "@/lib/config/site-config";
+
 declare global {
   interface Window {
     Calendly?: {
@@ -11,7 +13,6 @@ declare global {
 }
 
 const CALENDLY_SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
-const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL!;
 
 export function useCalendlyPopup() {
   const isReady = useRef(false);
@@ -43,11 +44,6 @@ export function useCalendlyPopup() {
   }, []);
 
   const openPopup = useCallback(() => {
-    if (!CALENDLY_URL) {
-      console.error("NEXT_PUBLIC_CALENDLY_URL no está definida.");
-      return;
-    }
-
     if (!window.Calendly) {
       console.warn("Calendly aún no está listo, reintentando en 300ms...");
       window.setTimeout(() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL }), 300);
