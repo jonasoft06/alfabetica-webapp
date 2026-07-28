@@ -19,6 +19,16 @@ export const metadata: Metadata = {
   },
   description:
     "Acompañamos a autores, editoriales, empresas e instituciones en todo el proceso de creación de su libro: desde la idea hasta la impresión y distribución digital.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

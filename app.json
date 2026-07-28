@@ -1,0 +1,20 @@
+{
+  "healthchecks": {
+    "web": [
+      {
+        "type": "startup",
+        "name": "home responde y contiene 'editorial'",
+        "path": "/",
+        "content": "editorial",
+        "attempts": 3
+      },
+      {
+        "type": "startup",
+        "name": "cotizador responde y contiene 'personalizada'",
+        "path": "/cotizador",
+        "content": "personalizada",
+        "attempts": 3
+      }
+    ]
+  }
+}

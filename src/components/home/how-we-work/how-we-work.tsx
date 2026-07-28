@@ -117,7 +117,7 @@ export default function HowWeWork() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[auto_1fr_auto] lg:gap-8">
 
           <Image
-            src="/svg/home/how-we-work/illustration-work.svg"
+            src="/svg/brand/character-illustration-work.svg"
             alt=""
             aria-hidden="true"
             width={200}
